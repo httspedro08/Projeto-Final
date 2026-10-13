@@ -1,0 +1,10 @@
+# Ignorar ambiente virtual Python
+backend/venv/
+backend/__pycache__/
+*.pyc
+
+# Ignorar o arquivo binário do banco de dados SQLite
+bd/*.db
+
+# Ignorar arquivos de configuração local do VS Code
+.vscode/

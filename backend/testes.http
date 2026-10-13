@@ -1,0 +1,80 @@
+### Configurações Globais
+@baseUrl = http://localhost:5000
+
+### 1. Teste de Status da API (GET)
+GET {{baseUrl}}/
+Accept: application/json
+
+###
+
+### 2. Cadastrar Novo Usuário / Professor (POST)
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "cpf": "11144477735",
+  "nome": "Professor Teste",
+  "senha": "senha123"
+}
+
+###
+
+### 3. Autenticação / Login (POST)
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "cpf": "11144477735",
+  "senha": "senha123"
+}
+
+###
+
+### 4. Consultar Todas as Reservas (GET)
+GET {{baseUrl}}/reservas
+Accept: application/json
+
+###
+
+### 5. Criar Nova Reserva (POST)
+POST {{baseUrl}}/reservas
+Content-Type: application/json
+
+{
+  "id": "res-101",
+  "data": "2026-10-15",
+  "espaco": "Laboratório 1",
+  "horario": "07:10 – 08:00",
+  "cpf": "11144477735",
+  "nome": "Professor Teste",
+  "turma": "3º C - Desenvolvimento de Sistemas"
+}
+
+###
+
+### 6. Cancelar / Deletar Reserva (DELETE)
+DELETE {{baseUrl}}/reservas/res-101
+Accept: application/json
+
+###
+
+### 7. Listar Professores Autorizados (GET)
+GET {{baseUrl}}/professores
+Accept: application/json
+
+###
+
+### 8. Autorizar Novo Professor (POST)
+POST {{baseUrl}}/professores
+Content-Type: application/json
+
+{
+  "cpf": "22233344455",
+  "nome": "Professora Ana"
+}
+
+###
+
+### 9. Remover Professor Autorizado (DELETE)
+DELETE {{baseUrl}}/professores/22233344455
+Accept: application/json
